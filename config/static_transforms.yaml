@@ -1,0 +1,50 @@
+ntu:
+  - translation: [0.0, 0.0, 0.0]
+    rotation: [0.0, 0.0, 0.0]
+    parent_frame: base_link
+    child_frame: imu_link
+  - translation: [1.5489637080882, 0.0020140713619, 1.5576283094788]
+    rotation: [0.00552943, -0.12431302, 0.01614686]
+    parent_frame: base_link
+    child_frame: cam0_link
+  - translation: [1.5899639721385, 0.0120510416491, 1.5560618537049]
+    rotation: [0.00519443, 0.1347802, 0.01465067]
+    parent_frame: base_link
+    child_frame: cam1_link
+  - translation: [3.141592653589793, 0.0, 1.570796326794897]
+    rotation: [-0.550, 0.030, 0.050]
+    parent_frame: base_link
+    child_frame: lidar_vert_link
+  - translation: [0.0, 0.0, 0.0]
+    rotation: [-0.050, 0.000, 0.055]
+    parent_frame: base_link
+    child_frame: lidar_hori_link
+
+euroc:
+  - translation: [0.0, 0.0, 0.0]
+    rotation: [0.0, 0.0, 0.0]
+    parent_frame: base_link
+    child_frame: imu_link
+  - translation: [-0.0216401, -0.0646770, 0.0098107]
+    rotation: [0.004312, -0.025784, 1.586706]
+    parent_frame: base_link
+    child_frame: cam0_link
+  - translation: [-0.0198436, 0.0453689, 0.0078621]
+    rotation: [0.025276, -0.025407, 1.558696]
+    parent_frame: base_link
+    child_frame: cam1_link
+
+tum-vi:
+  - translation: [0.0, 0.0, 0.0]
+    rotation: [0.0, 0.0, 0.0]
+    parent_frame: base_link
+    child_frame: imu_link
+  - translation: [0.0447659, -0.0755245, -0.0465419]
+    rotation: [-0.0066, -1.5722, 3.1311]
+    parent_frame: base_link
+    child_frame: cam0_link
+  - translation: [-0.0561178 -0.0738562 -0.0494102]
+    rotation: [-0.0136 -1.5698 3.1102]
+    parent_frame: base_link
+    child_frame: cam1_link
+
