@@ -3,22 +3,22 @@ ntu:
     rotation: [0.0, 0.0, 0.0]
     parent_frame: base_link
     child_frame: imu_link
-  - translation: [1.5489637080882, 0.0020140713619, 1.5576283094788]
-    rotation: [0.00552943, -0.12431302, 0.01614686]
+  - translation: [0.00552943, -0.12431302, 0.01614686]
+    rotation: [-1.5489637080882, 0.0020140713619, -1.5576283094788]
     parent_frame: base_link
-    child_frame: cam0_link
-  - translation: [1.5899639721385, 0.0120510416491, 1.5560618537049]
-    rotation: [0.00519443, 0.1347802, 0.01465067]
+    child_frame: camera
+  - translation: [0.00519443, 0.1347802, 0.01465067]
+    rotation: [-1.5899639721385, 0.0120510416491, -1.5560618537049]
     parent_frame: base_link
-    child_frame: cam1_link
-  - translation: [3.141592653589793, 0.0, 1.570796326794897]
-    rotation: [-0.550, 0.030, 0.050]
+    child_frame: camera_right
+  - translation: [-0.550, 0.030, 0.050]
+    rotation: [3.141592653589793, 0.0, -1.570796326794897]
     parent_frame: base_link
-    child_frame: lidar_vert_link
-  - translation: [0.0, 0.0, 0.0]
-    rotation: [-0.050, 0.000, 0.055]
+    child_frame: sensor2/os_sensor
+  - translation: [-0.050, 0.000, 0.055]
+    rotation: [0.0, 0.0, 3.142]
     parent_frame: base_link
-    child_frame: lidar_hori_link
+    child_frame: sensor1/os_sensor
 
 euroc:
   - translation: [0.0, 0.0, 0.0]

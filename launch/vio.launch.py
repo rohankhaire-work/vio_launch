@@ -1,6 +1,6 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction, ExecuteProcess
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
 from launch_ros.actions import Node
 
 import os
@@ -25,12 +25,13 @@ def load_transforms_from_yaml(context, *args, **kwargs):
         roll, pitch, yaw = tf['rotation']
         parent = tf['parent_frame']
         child = tf['child_frame']
+        node_name = f'{child}_tf'.replace('/', '_')
 
         tf_nodes.append(
             Node(
                 package='tf2_ros',
                 executable='static_transform_publisher',
-                name=f'{child}_tf',
+                name=node_name,
                 arguments=[
                     str(x), str(y), str(z),
                     str(roll), str(pitch), str(yaw),
@@ -40,6 +41,29 @@ def load_transforms_from_yaml(context, *args, **kwargs):
         )
 
     return tf_nodes
+
+
+def load_rviz_node(context, *args, **kwargs) -> Node:
+    setup_type = LaunchConfiguration('dataset').perform(context)
+    rviz_config_filename = PythonExpression([
+        f'"{setup_type}" + ".rviz"'
+    ])
+
+    rviz_config_path = PathJoinSubstitution([
+        get_package_share_directory('vio_launch'),
+        'rviz',
+        rviz_config_filename
+    ])
+
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', rviz_config_path],
+        output='screen'
+    )
+
+    return [rviz_node]
 
 
 def generate_launch_description():
@@ -64,10 +88,5 @@ def generate_launch_description():
         ),
 
         # Add RViz node
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            name='rviz2',
-            output='screen'
-        )
+        OpaqueFunction(function=load_rviz_node)
     ])
