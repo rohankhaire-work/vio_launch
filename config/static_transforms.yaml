@@ -2,7 +2,7 @@ ntu:
   - translation: [0.0, 0.0, 0.0]
     rotation: [0.0, 0.0, 0.0]
     parent_frame: base_link
-    child_frame: imu_link
+    child_frame: imu
   - translation: [0.00552943, -0.12431302, 0.01614686]
     rotation: [-1.5489637080882, 0.0020140713619, -1.5576283094788]
     parent_frame: base_link
@@ -24,27 +24,27 @@ euroc:
   - translation: [0.0, 0.0, 0.0]
     rotation: [0.0, 0.0, 0.0]
     parent_frame: base_link
-    child_frame: imu_link
+    child_frame: imu4
   - translation: [-0.0216401, -0.0646770, 0.0098107]
     rotation: [0.004312, -0.025784, 1.586706]
     parent_frame: base_link
-    child_frame: cam0_link
+    child_frame: cam0
   - translation: [-0.0198436, 0.0453689, 0.0078621]
     rotation: [0.025276, -0.025407, 1.558696]
     parent_frame: base_link
-    child_frame: cam1_link
+    child_frame: cam1
 
 tum_vi:
   - translation: [0.0, 0.0, 0.0]
     rotation: [0.0, 0.0, 0.0]
     parent_frame: base_link
-    child_frame: imu_link
+    child_frame: imu
   - translation: [0.0447659, -0.0755245, -0.0465419]
     rotation: [-0.0066, -1.5722, 3.1311]
     parent_frame: base_link
-    child_frame: cam0_link
+    child_frame: cam0
   - translation: [-0.0561178, -0.0738562, -0.0494102]
     rotation: [-0.0136, -1.5698, 3.1102]
     parent_frame: base_link
-    child_frame: cam1_link
+    child_frame: cam1
 
