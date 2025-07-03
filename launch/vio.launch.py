@@ -71,7 +71,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'dataset',
             default_value='euroc',
-            description='Type of dataset: euroc, tum-vi, ntu'
+            description='Type of dataset: euroc, tum_vi, ntu'
         ),
         OpaqueFunction(function=load_transforms_from_yaml),
 

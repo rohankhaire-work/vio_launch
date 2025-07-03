@@ -34,7 +34,7 @@ euroc:
     parent_frame: base_link
     child_frame: cam1_link
 
-tum-vi:
+tum_vi:
   - translation: [0.0, 0.0, 0.0]
     rotation: [0.0, 0.0, 0.0]
     parent_frame: base_link
@@ -43,8 +43,8 @@ tum-vi:
     rotation: [-0.0066, -1.5722, 3.1311]
     parent_frame: base_link
     child_frame: cam0_link
-  - translation: [-0.0561178 -0.0738562 -0.0494102]
-    rotation: [-0.0136 -1.5698 3.1102]
+  - translation: [-0.0561178, -0.0738562, -0.0494102]
+    rotation: [-0.0136, -1.5698, 3.1102]
     parent_frame: base_link
     child_frame: cam1_link
 
